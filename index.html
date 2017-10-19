@@ -1,102 +1,139 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title> Sophie Veksler's Personal Page </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script>
-    	var selected_id = "aboutMe";
+    <head>
+        <meta charset="utf-8">
+        <title> Sophie Veksler's Personal Page </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            var selected_id = "aboutMe";
+            
+            function show(target) {
+            	document.getElementById(selected_id).style.display = 'none';
+            	document.getElementById(target.id).style.display = 'block';
+            	selected_id = target.id;
+            }
+        </script>
+        <style>
+            body {
+            padding-top: 5rem;
+            }
+            .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            }
+            .img-circle {
+            border-radius: 50%;
+            border: 4px solid #343a40;
+            width: 30%;
+            height: 30%;
+            }
+            #resume, #contact, #projects {
+            display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#" onclick="show(aboutMe)">Sophie</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="show(resume)">Resume<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="show(projects)">Projects<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="show(contact)">Contact</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://www.linkedin.com/in/sophia-veksler-3782a482/" target ="_blank">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container" id = "aboutMe">
+            <div class="starter-template">
+                <img class="img-circle" src="sophie.jpg"/>
+                <h1>Hi, I'm Sophie!</h1>
+                <p class="lead">I'm seeking full-time employment after I finish my MS in Computer Science in May, 2018.</p>
+            </div>
+        </div>
+        <div class="container" id = "resume">
+            <div>
+                <h1>Resume</h1>
+                <div class = "resumeDiv">
+                    <div class = "resumeSection">
+                        <div class = "resumeHeading">
+                            <h4> Education </h4>
+                        </div>
+                        <div class = "resumeSubsection">
+                            <p> <b>Washington University in St. Louis </b> <br/> Candidate for MS in Computer Science: <i>5/2018 (expected)</i> <br/>
+                                BA in Applied Mathematics and Computer Science, Minor in Spanish: <i>5/2017</i> 
+                            </p>
 
-    	function show(target) {
-    		document.getElementById(selected_id).style.display = 'none';
-    		document.getElementById(target.id).style.display = 'block';
-    		selected_id = target.id;
-    	}
-   	</script>
-<style>
-body {
-  padding-top: 5rem;
-}
-.starter-template {
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-.img-circle {
-	border-radius: 50%;
-	border: 4px solid #343a40;
-	width: 30%;
-	height: 30%;
-}
-#resume, #contact, #projects {
-	display: none;
-}
-</style>
+                            <p> <b> Newton South High School</b> <br/>
+                            	High School Diploma: <i>6/2013</i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "resumeSection">
+                        <div class = "resumeHeading">
+                            <h4> Skills </h4>
+                        </div>
+                        <div class = "resumeSubsection">
+                           <p> <i>Languages: </i> English (native), Russian (fluent), Spanish (fluent) <br/>
+                            <i>Computer Languages: </i> Java, JavaScript (D3, jQuery), Python, C, C++, R, PHP, HTML/CSS, SQL (mySQL, MSSQL) <br/>
+                            <i>Tools:</i> JIRA, Confluence, MS Office, Git/Github, AWS, MySQL, MS SQL Server Management Studio, Photoshop <br/>
+                            <i>Platforms:</i> Windows, Linux, macOS</p>
+                        </div>
+                    </div>
+                     <div class = "resumeSection">
+                        <div class = "resumeHeading">
+                            <h4> Experience </h4>
+                        </div>
+						<div class = "resumeSubsection">
+                            <p> <b>Liaison International </b> <br/> 
+                            	<i>Software Development Intern </i> - Summer 2017                            	
+                            	<ul>
+                            		<li> Developed a Python/SQL tool used to automate steps of new client onboarding
+                            		</li>
+                            		<li> Actively participated in all Agile Ceremonies (standups, retrospectives, etc.)
+                            		</li>
+                            	</ul>
+                            
+                            <i>Quality Assurance Intern </i> - Summer 2016                            	
+                            <ul>
+                            	<li>
+                            		Confirmed implementation of configuration using self-developed SQL scripts
+                            	</li>
+                            	<li>
+                            		Tested UX/UI of new features and assisted in creating implementation plan
+                            	</li>
+                            	<li>Wrote documentation for the company’s software and maintained wiki pages
+                            	</li>
+                            </ul>
+                            </p>
 
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#" onclick="show(aboutMe)">Sophie</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#" onclick="show(resume)">Resume<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" onclick="show(projects)">Projects<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" onclick="show(contact)">Contact</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="https://www.linkedin.com/in/sophia-veksler-3782a482/" target ="_blank">LinkedIn</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="container" id = "aboutMe">
-      <div class="starter-template">
-      	<img class="img-circle" src="sophie.jpg"/>
-        <h1>Hi, I'm Sophie!</h1>
-        <p class="lead">I'm seeking full-time employment after I finish my MS in Computer Science in May, 2018.</p>
-      </div>
-
-    </div>
-
-      <div class="container" id = "resume">
-      <div class="starter-template">
-      	
-        <h1>Resume</h1>
-        <div class = "resumeDiv">
-        <h4> Education </h4>
-        <p> Washington University in St. Louis: Candidate for MS in Computer Science </p>
-    	</div>
-       
-      </div>
-
-    </div>
-    <div class="container" id = "contact">
-      <div class="starter-template">
-      	
-        <h1>This is my contact page.</h1>
-       
-      </div>
-  </div>
-      <div class="container" id = "projects">
-      <div class="starter-template">
-      	
-        <h1>This is my projects page.</h1>
-       
-      </div>
-  </div>
-  </body>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id = "contact">
+            <div class="starter-template">
+                <h1>This is my contact page.</h1>
+            </div>
+        </div>
+        <div class="container" id = "projects">
+            <div class="starter-template">
+                <h1>This is my projects page.</h1>
+            </div>
+        </div>
+    </body>
 </html>
